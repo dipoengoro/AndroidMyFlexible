@@ -24,10 +24,18 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        if (v?.id == R.id.button_category) {
+            val categoryFragment = CategoryFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, categoryFragment, CategoryFragment.TAG)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 
     companion object {
-        val SIMPLE_NAME: String = HomeFragment::class.java.simpleName
+        val TAG: String = HomeFragment::class.java.simpleName
     }
 }

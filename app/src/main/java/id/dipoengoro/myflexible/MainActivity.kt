@@ -11,11 +11,11 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val homeFragment = HomeFragment()
-        val fragment = fragmentManager.findFragmentByTag(HomeFragment.SIMPLE_NAME)
+        val fragment = fragmentManager.findFragmentByTag(HomeFragment.TAG)
 
         if (fragment !is HomeFragment) {
-            Log.d(TAG, "Fragment Name: ${HomeFragment.SIMPLE_NAME}")
-            fragmentManager.beginTransaction().add(R.id.frame_container, homeFragment, HomeFragment.SIMPLE_NAME)
+            Log.d(TAG, "Fragment Name: ${HomeFragment.TAG}")
+            fragmentManager.beginTransaction().add(R.id.frame_container, homeFragment, HomeFragment.TAG)
                 .commit()
         }
     }
